@@ -8,10 +8,11 @@ Este repositorio recoge las implementaciones de los ejercicios prácticos sobre 
 
 Configuración de tres objetos en la escena, cada uno con una posición inicial almacenada en `Start()`. Al pulsar la barra espaciadora (`Input.GetAxis("Jump") > 0`), los objetos se desplazan sumando a su posición original un vector de desplazamiento configurable desde el Inspector.
 
-* **Script:** `Assets/Scripts/05_move_objects_with_marker.cs`
+**Script:** 
+* `Assets/Scripts/05_move_objects_with_marker.cs`
 
-* **Ejecución:**
-[](Gifs/Ejercicio_05.gif)
+**Ejecución:**
+![](/Gifs/Ejercicio_05.gif)
 
 
 ---
@@ -20,10 +21,11 @@ Configuración de tres objetos en la escena, cada uno con una posición inicial 
 
 Se implementa un script en el cubo con una velocidad pública editable en el Inspector. Al pulsar las teclas de dirección (flechas), se detecta la tecla concreta mediante `Input.GetKey()` y se imprime en la consola de depuración el nombre de la flecha pulsada junto con el resultado de multiplicar la velocidad por el valor actual de los ejes `Horizontal` y `Vertical`.
 
-* **Script:** `Assets/Scripts/06_control_cube_velocity.cs`
+**Script:** 
+* `Assets/Scripts/06_control_cube_velocity.cs`
 
-* **Demostración:**
-
+**Ejecución:**
+![](/Gifs/Ejercicio_06.gif)
 
 ---
 
@@ -31,8 +33,9 @@ Se implementa un script en el cubo con una velocidad pública editable en el Ins
 
 Reconfiguración del gestor de entradas clásico en `Edit -> Project Settings -> Input Manager`. Se redefine la acción de disparo (`Fire1`) asignando la tecla `h` en el campo *Positive Button*.
 
-* **Captura de configuración:**
+**Captura de configuración:**
 
+![](/Gifs/Ejercicio_07.png)
 
 ---
 
@@ -47,7 +50,9 @@ Traslación continua del cubo mediante `transform.Translate(moveDirection * spee
 * **Espacio local vs. mundial (`Space.Self` vs. `Space.World`):** En espacio local, el cubo se desplaza respecto a su propia orientación interna (si está rotado, su eje frontal ya no coincide con el del escenario). En espacio mundial, se mueve rígidamente sobre los ejes cardinales globales de la escena.
 * **Script:** `Assets/Scripts/08_traslade_cube.cs`
 
-* **Demostración:**
+**Ejecución:**
+
+![](/Gifs/Ejercicio_08.gif)
 
 
 ---
@@ -56,14 +61,16 @@ Traslación continua del cubo mediante `transform.Translate(moveDirection * spee
 
 Movimiento simultáneo e independiente de dos entidades separando los ejes en el Input Manager: el cubo responde exclusivamente a las flechas del teclado y la esfera a las teclas WASD, aplicando `transform.Translate` frame a frame.
 
-* **Scripts:**
+**Scripts:**
 * `Assets/Scripts/09_cube_player.cs`
 
 * `Assets/Scripts/09_sphere_player.cs`
 
 
 
-* **Demostración:**
+**Ejecución:**
+
+![](/Gifs/Ejercicio_09.gif)
 
 
 ---
@@ -72,15 +79,15 @@ Movimiento simultáneo e independiente de dos entidades separando los ejes en el
 
 Adaptación de los controles del ejercicio 9 integrando `Time.deltaTime` en las funciones de traslación. Esto normaliza el desplazamiento para que sea constante en unidades por segundo reales, evitando fluctuaciones de velocidad provocadas por la tasa de fotogramas (FPS) del equipo.
 
-* **Scripts:**
+**Scripts:**
 * `Assets/Scripts/10_cube_player_delta_time.cs`
 
 * `Assets/Scripts/10_sphere_player_delta_time.cs`
 
 
 
-* **Demostración:**
-
+**Ejecución:**
+![](/Gifs/Ejercicio_10.gif)
 
 ---
 
@@ -88,9 +95,11 @@ Adaptación de los controles del ejercicio 9 integrando `Time.deltaTime` en las 
 
 El cubo calcula la dirección hacia la esfera mediante resta de vectores (`esfera - cubo`), anula la componente vertical (`y = 0`) para mantener su altura fija y normaliza el vector con `normalized` para garantizar que la velocidad de persecución sea fija e independiente de la distancia.
 
-* **Script:** `Assets/Scripts/11_cube_moving_to_sphere.cs`
+**Script:** 
+* `Assets/Scripts/11_cube_moving_to_sphere.cs`
 
-* **Demostración:**
+**Ejecución:**
+![](/Gifs/Ejercicio_11.gif)
 
 
 ---
@@ -99,9 +108,12 @@ El cubo calcula la dirección hacia la esfera mediante resta de vectores (`esfer
 
 El cubo emplea el método `transform.LookAt()` para alinear su eje Z frontal hacia la posición de la esfera en todo momento, avanzando hacia adelante en su sistema local mediante su velocidad escalada en el tiempo.
 
-* **Script:** `Assets/Scripts/12_cube_moving_looking_at_objective.cs`
+**Script:** 
+* `Assets/Scripts/12_cube_moving_looking_at_objective.cs`
 
-* **Demostración:**
+![](/Gifs/Ejercicio_12.gif)
+
+**Ejecución:**
 
 
 ---
@@ -110,6 +122,10 @@ El cubo emplea el método `transform.LookAt()` para alinear su eje Z frontal hac
 
 El objeto avanza sin interrupción a lo largo de su vector frontal global (`transform.forward * speed * Time.deltaTime, Space.World`) mientras rota sobre su eje vertical local (`transform.up`) según la entrada del eje `Horizontal`. Incluye `Debug.DrawRay` para visualizar de forma continua el vector hacia adelante en la vista de escena.
 
-* **Script:** `Assets/Scripts/13_rotation_on_vertical_axis.cs`
+**Script:** 
 
-* **Demostración:**
+* `Assets/Scripts/13_rotation_on_vertical_axis.cs`
+
+**Ejecución:**
+
+![](/Gifs/Ejercicio_13.gif)
